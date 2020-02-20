@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# vscode not ignored because this folder configures eslint to work on vscode
+#.vscode
+
+# dotenv environment variables file
+.env
+.env.test
+.env.prod
+.*.env
+
+# index para outros ambientes
+index.*.js
+
+#build folder ts
+build/
+
+#testes
+__tests__/coverage/
