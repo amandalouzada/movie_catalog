@@ -1,7 +1,7 @@
 # Catálogo de filmes
 
   ## Abordagem
-  Projeto dividido em dois diretórios FrontEnd e BackEnd, onde serão realizadas entregaus contínuas.
+  Projeto dividido em dois diretórios FrontEnd e BackEnd, onde serão realizadas entregas contínuas.
     - Estrutura Basica Front
     - Estrutura Basica BackEnd
     - Cadastro de Filmes
