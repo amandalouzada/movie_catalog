@@ -23,7 +23,7 @@ export class ListComponent implements OnInit {
   getMovies() {
     this.moviesService.listMovies()
       .subscribe(
-        (res: { list: MovieInterface[], page: number, pageSize: number }) => {
+        (res: { list: MovieInterface[], page: number, pageSize: number, totalResults }) => {
           this.movies = res.list;
         },
         (error: { error: any }) => {

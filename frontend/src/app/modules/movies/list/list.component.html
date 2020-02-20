@@ -9,12 +9,12 @@
 
 
   <div class="row">
-    <div class="col-lg-4 p-2">
+    <div *ngFor="let movie of movies" class="col-lg-4 p-2">
       <div class="card card--dark" (click)="goToView()">
         <img [src]="testYoutube | youtubeImg :'mq'" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <span>2017</span>
+          <h5 class="card-title">{{movie?.title}}</h5>
+          <span>{{movie?.releaseDate}}</span>
         </div>
       </div>
     </div>

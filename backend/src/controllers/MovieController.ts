@@ -64,10 +64,12 @@ class MovieController {
 
     res.json({
       list,
-      page,
-      pageSize,
+      page: skip,
+      pageSize: limit,
       totalResults,
     })
+
+
   }
 
 }
