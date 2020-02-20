@@ -7,6 +7,7 @@ export const envAppName = process.env.APP_NAME;
 export const envServer = {
   portHttp: process.env.PORT_HTTP || 80,
   domain: process.env.SERVER_DOMAIN,
+  domainUrl: `http://${process.env.SERVER_DOMAIN}`,
 };
 
 
