@@ -1,0 +1,11 @@
+.card{
+  cursor: pointer;
+  &--dark{
+    background-color: #1f272d;
+    color: #fff;
+  }
+  &__footer{
+    display: flex;
+    justify-content: space-between;
+  }
+}

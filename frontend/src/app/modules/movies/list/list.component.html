@@ -1,0 +1,22 @@
+<section class="px-4">
+  <form autocomplete="off">
+    <div class="form-group">
+      <input type="text" name="Search" placeholder="Search...">
+    </div>
+  </form>
+
+
+
+
+  <div class="row">
+    <div class="col-lg-4 p-2">
+      <div class="card card--dark" (click)="goToView()">
+        <img [src]="testYoutube | youtubeImg :'mq'" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <span>2017</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -22,7 +22,7 @@ describe('Movie', () => {
     const response = await request(envServer.domainUrl)
       .post('/v1/movies')
       .send({
-        title: "Teste",
+        title: "Teste_1",
         genre: "Drama",
         releaseDate: "2017",
         mainActors: "João e Maria",
