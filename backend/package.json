@@ -1,0 +1,58 @@
+{
+  "name": "movie-catalog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Amanda Louzada <amandanuneslouzada@gmail.com.br>",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon src/app.ts",
+    "start": "node -r tsconfig-paths/register -r sucrase/register src/app.ts",
+    "test": "NODE_ENV=test jest"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^5.0.0",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.8.10",
+    "multer": "^1.4.2",
+    "youch": "^2.0.10",
+    "yup": "^0.28.1"
+  },
+  "devDependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
+    "@types/bcrypt": "^3.0.0",
+    "@types/cors": "^2.8.6",
+    "@types/date-fns": "^2.6.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.2",
+    "@types/express-rate-limit": "^3.3.3",
+    "@types/helmet": "^0.0.45",
+    "@types/jest": "^25.1.1",
+    "@types/jsonwebtoken": "^8.3.7",
+    "@types/lodash": "^4.14.149",
+    "@types/mongoose": "^5.7.0",
+    "@types/ms": "^0.7.31",
+    "@types/multer": "^1.4.0",
+  
+  
+    "@types/yup": "^0.26.29",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "sucrase": "^3.12.1",
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.5"
+  }
+}
