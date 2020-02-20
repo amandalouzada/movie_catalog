@@ -1,0 +1,8 @@
+.btn--primary {
+  background-color: #96d518;
+  border:none;
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(150,213,24, 0.25);
+  }
+}

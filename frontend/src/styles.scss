@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&display=swap");
+@import "theme/colors";
+@import "theme/btn";
 
 //Reset
 * {
@@ -11,6 +13,23 @@
   background: transparent;
   vertical-align: baseline;
   font-family: "Ubuntu", helvetica, sans-serif;
+}
+
+//theme
+
+body {
+  background-color: $dark;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  ul,
+  span,
+  label {
+    color: $light;
+  }
 }
 
 //Forms
