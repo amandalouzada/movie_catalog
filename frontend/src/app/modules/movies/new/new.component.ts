@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-
+import { MoviesService } from 'src/app/services/movies.service';
+import { MovieInterface } from 'src/app/interfaces/movie.interface';
+import {ElementRef} from '@angular/core';
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
@@ -8,7 +10,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class NewComponent implements OnInit {
   public formMovie: FormGroup;
-  constructor() {
+
+  constructor(private moviesService: MoviesService) {
     this.formMovie = new FormGroup({
       title: new FormControl('', Validators.required),
       genre: new FormControl('', Validators.required),
@@ -20,11 +23,17 @@ export class NewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
-  save(){
+  save() {
     console.log(this.formMovie.value);
+    this.moviesService.newMovie(this.formMovie.value)
+      .subscribe((res: { movie: MovieInterface }) => {
+        console.log(res);
+      },
+      (error)=>{
+        console.log(error);
+      })
   }
 
 }
