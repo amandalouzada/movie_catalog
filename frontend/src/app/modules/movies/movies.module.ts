@@ -6,6 +6,7 @@ import { MoviesComponent } from './movies.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component'
 import { YoutubeImgPipe } from 'src/app/pipes/youtube-img.pipe';
+import { ViewComponent } from './view/view.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { YoutubeImgPipe } from 'src/app/pipes/youtube-img.pipe';
     MoviesComponent,
     ListComponent,
     YoutubeImgPipe,
+    ViewComponent,
   ],
   imports: [
     CommonModule,

@@ -10,7 +10,7 @@
 
   <div class="row">
     <div *ngFor="let movie of movies" class="col-lg-4 p-2">
-      <div class="card card--dark" (click)="goToView()">
+      <div class="card card--dark" (click)="goToView(movie._id)">
         <img [src]="testYoutube | youtubeImg :'mq'" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{movie?.title}}</h5>
