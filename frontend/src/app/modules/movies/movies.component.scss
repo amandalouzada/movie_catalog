@@ -1,0 +1,12 @@
+main {
+  padding-top: 60px;
+}
+
+.navbar {
+  &--dark {
+    background: rgba(31, 39, 45, 0.9);
+    color: #fff;
+  }
+}
+
+
