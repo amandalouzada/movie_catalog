@@ -2,11 +2,11 @@
   <div class="col-lg-12">
     <div class="card card--no-border" [class]="!play ? 'card__view' :''">
       <div *ngIf="play" class="embed-responsive embed-responsive-16by9">
-        <iframe src="https://www.youtube.com/embed/eEmnlwFJ1XU?autoplay=1" allow="autoplay; encrypted-media"
+        <iframe [src]="movie.youtubeTrailer+'?autoplay=1'" allow="autoplay; encrypted-media"
           class="embed-responsive-item">
         </iframe>
       </div>
-      <img *ngIf="!play" src="https://img.youtube.com/vi/eEmnlwFJ1XU/maxresdefault.jpg" class="card-img-top" alt="...">
+      <img *ngIf="!play" [src]="movie.youtubeTrailer | youtubeImg :'maxres'" class="card-img-top" alt="...">
       <div class="card__head">
         <h3 class="pb-2">{{movie.title}}</h3>
         <h5>{{movie.releaseDate}}</h5>

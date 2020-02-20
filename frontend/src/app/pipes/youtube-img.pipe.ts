@@ -13,7 +13,7 @@ export class YoutubeImgPipe implements PipeTransform {
     const youtubeId = getYoutubeId(value);
 
     if (!youtubeId)
-      return 'https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwin0PT9mOHnAhXXLLkGHfRSDSwQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pinclipart.com%2Fpindetail%2FihbbhJR_free-download-mlp-projector-vector-clipart-movie-projector%2F&psig=AOvVaw0Pndp4zia5mtkL4mrWqgw2&ust=1582324680100003';
+      return 'https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_YouTube_image1600w.jpg';
 
     if (!args)
       args = 'mq';

@@ -69,6 +69,29 @@ class MovieController {
       totalResults,
     })
 
+  }
+
+  public view = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    if (!id) {
+      throw new ErrorLib({
+        message: 'Id não informado'
+      })
+    }
+
+    const movie = await Movie.findById(id);
+
+    if (!movie) {
+      throw new ErrorLib({
+        message: 'Filme não encontrado'
+      })
+    }
+
+    res.json({
+      movie
+    })
 
   }
 

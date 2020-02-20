@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewComponent } from './view.component';
+import { MoviesService } from 'src/app/services/movies.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ViewComponent', () => {
   let component: ViewComponent;
@@ -8,9 +11,12 @@ describe('ViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewComponent ]
+      imports: [HttpClientModule, RouterTestingModule],
+      declarations: [ViewComponent],
+      providers: [MoviesService]
+
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

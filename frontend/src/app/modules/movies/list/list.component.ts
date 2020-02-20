@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
   public movies: MovieInterface[] = [];
-  public testYoutube: string = 'https://www.youtube.com/watch?v=bFZCLcSyB20';
   constructor(private moviesService: MoviesService, private router: Router) { }
 
   ngOnInit(): void {

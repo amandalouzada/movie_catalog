@@ -22,4 +22,8 @@ RoutesV1.get('/movies',
   movieController.list
 )
 
+RoutesV1.get('/movies/:id',
+  movieController.view
+)
+
 export default RoutesV1;
