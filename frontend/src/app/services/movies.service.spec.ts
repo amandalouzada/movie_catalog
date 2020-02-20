@@ -37,4 +37,5 @@ describe('MoviesService', () => {
 
     expect(response.list).toBeTruthy()
   });
+
 });

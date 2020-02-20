@@ -6,7 +6,7 @@ const routes: Routes = [
   {
 		path: '',
 		pathMatch: 'full',
-		redirectTo: ''
+		redirectTo: 'movies'
 	},
 	{
     path: 'movies',

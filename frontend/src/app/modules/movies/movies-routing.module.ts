@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { MoviesComponent } from './movies.component'
 import { NewComponent } from './new/new.component'
 import { ListComponent } from './list/list.component'
+import { ViewComponent } from './view/view.component'
 
 
 
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'new',
         component: NewComponent
+      },
+      {
+        path: ':id/view',
+        component: ViewComponent
       },
       {
         path: '',
