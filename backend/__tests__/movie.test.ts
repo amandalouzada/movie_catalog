@@ -22,7 +22,7 @@ describe('Movie', () => {
     const response = await request(envServer.domainUrl)
       .post('/v1/movies')
       .send({
-        title: "Teste",
+        title: "Teste_1",
         genre: "Drama",
         releaseDate: "2017",
         mainActors: "João e Maria",
@@ -33,17 +33,10 @@ describe('Movie', () => {
     expect(response.body).toHaveProperty('movie');
   });
 
-  it('O filme não pode ser cadastrado', async () => {
+  it('Lista cadastros', async () => {
     const response = await request(envServer.domainUrl)
-      .post('/v1/movies')
-      .send({
-        genre: "Drama",
-        releaseDate: "2017",
-        mainActors: "João e Maria",
-        youtubeTrailer: "https://youtube.com",
-        summarizedPlot: "Era uma vez um teste que deu muito errado"
-      });
-    expect(response.status).toBe(422);
+      .get('/v1/movies')
+    expect(response.status).toBe(200);
   });
 
 });

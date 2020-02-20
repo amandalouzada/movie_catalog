@@ -49,6 +49,29 @@ class MovieController {
   }
 
 
+  public list = async (req: Request, res: Response) => {
+
+    const { page, pageSize } = req.query;
+
+    const skip = page && page > 0 ? parseInt(page) : 1;
+    const limit = pageSize && parseInt(pageSize) <= 500 ? parseInt(pageSize) : 500;
+    const list = await Movie.find({})
+      .skip(skip - 1)
+      .limit(limit);
+
+    const totalResults = await Movie.countMovies({});
+
+
+    res.json({
+      list,
+      page: skip,
+      pageSize: limit,
+      totalResults,
+    })
+
+
+  }
+
 }
 
 const movieController = new MovieController();

@@ -16,4 +16,10 @@ export class MoviesService extends BaseService {
       headers: this.headers
     })
   }
+
+  listMovies(): Observable<any> {
+    return this.http.get(`${this.api}/movies`, {
+      headers: this.headers
+    })
+  }
 }
