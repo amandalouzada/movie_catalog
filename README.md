@@ -1,13 +1,14 @@
 # Catálogo de filmes
 
   ## Abordagem
-  Projeto dividido em dois diretórios FrontEnd e BackEnd, onde serão realizadas entregas contínuas.
-    - Estrutura Basica Front
-    - Estrutura Basica BackEnd
-    - Cadastro de Filmes
-    - Listar/Editar
-    - Autenticação
-    - Busca na API OMDB
+    Projeto dividido em dois diretórios FrontEnd e BackEnd, onde serão realizadas entregas contínuas.
+  
+   - Estrutura Basica Front
+   - Estrutura Basica BackEnd
+   - Cadastro de Filmes
+   - Listar/Editar
+   - Autenticação
+   - Busca na API OMDB
     
     
   ## Tecnologias
