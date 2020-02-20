@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&display=swap");
+
+//Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  vertical-align: baseline;
+  font-family: "Ubuntu", helvetica, sans-serif;
+}
+
+//Forms
+input,
+textarea {
+  min-width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 10px;
+  flex: auto;
+  color: white;
+
+  &:placeholder {
+    color: white;
+  }
+
+  &:-webkit-autofill {
+    animation: autofill 0.01s;
+    animation-fill-mode: forwards;
+  }
+}
+
+//Mecanismo para alterar CSS padrão do navegador
+@keyframes autofill {
+  0%,
+  100% {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+  }
+}
