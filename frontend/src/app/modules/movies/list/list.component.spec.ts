@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListComponent } from './list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MoviesService } from 'src/app/services/movies.service';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -8,9 +10,11 @@ describe('ListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListComponent ]
+      imports: [HttpClientModule],
+      declarations: [ListComponent],
+      providers: [MoviesService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

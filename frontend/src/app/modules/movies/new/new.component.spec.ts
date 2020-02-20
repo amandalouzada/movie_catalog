@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewComponent } from './new.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MoviesService } from 'src/app/services/movies.service';
 
 describe('NewComponent', () => {
   let component: NewComponent;
@@ -10,14 +11,14 @@ describe('NewComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      declarations: [ NewComponent ]
+      declarations: [NewComponent],
+      providers: [MoviesService]
     })
-    .compileComponents();
+      .compileComponents();
 
-    // TestBed.configureTestingModule({
-    //   imports: [HttpClientModule],
-    // });
-    // service = TestBed.inject(MoviesService);
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+    });
   }));
 
   beforeEach(() => {

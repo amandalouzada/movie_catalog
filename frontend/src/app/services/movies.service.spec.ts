@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { MoviesService } from './movies.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,15 +19,22 @@ describe('MoviesService', () => {
   it('cadastra novo filme', async () => {
 
     const { movie } = await service.newMovie({
-      title: "Teste Bat Filme",
+      title: (Math.floor(Math.random() * (10000 - 1)) + 1).toString(),
       genre: "Drama",
       releaseDate: "2017",
       mainActors: "João e Maria",
-      youtubeTrailer: "https://youtube.com",
+      youtubeTrailer: "https://www.youtube.com/watch?v=oqMHifOQhnY",
       summarizedPlot: "Era uma vez um teste que deu muito errado"
     }).toPromise();
 
-    console.log(movie);
-    expect(movie).toBe(movie);
+    expect(movie).toBeTruthy()
+  });
+
+
+  it('listando filmes', async () => {
+
+    const response = await service.listMovies().toPromise();
+
+    expect(response.list).toBeTruthy()
   });
 });
