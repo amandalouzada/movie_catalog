@@ -1,4 +1,4 @@
-import { envServer, envIsDev, envIsTest } from './environment';
+import { envServer } from './environment';
 
 import './mongodb';
 
@@ -46,8 +46,8 @@ export default new class ExpressServer {
       // vai processar de maneira generica pois foi um erro de execulção
       const errors = await new Youch(err, req).toJSON();
 
-      if (!envIsDev() && !envIsTest())
-        delete errors.error.frames;
+
+      delete errors.error.frames;
 
       res.status(500).json(errors);
       return;
@@ -65,7 +65,7 @@ export default new class ExpressServer {
     this.http.listen(envServer.portHttp, () => {
       console.log(`HTTP: start port ${envServer.portHttp}`);
     });
-   
+
   }
 
   /**
@@ -75,7 +75,7 @@ export default new class ExpressServer {
     //close http
     this.http.close();
 
-   
+
   }
 
   public applyRoute(routePath: string, route: express.Router) {

@@ -1,28 +1,27 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewComponent } from './new.component';
+import { ListComponent } from './list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesService } from 'src/app/services/movies.service';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe('NewComponent', () => {
-  let component: NewComponent;
-  let fixture: ComponentFixture<NewComponent>;
+describe('ListComponent', () => {
+  let component: ListComponent;
+  let fixture: ComponentFixture<ListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      declarations: [NewComponent],
+      imports: [HttpClientModule, RouterTestingModule],
+      declarations: [ListComponent],
       providers: [MoviesService]
     })
       .compileComponents();
-
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-    });
+      TestBed.inject(Router)
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewComponent);
+    fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

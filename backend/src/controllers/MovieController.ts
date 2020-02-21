@@ -48,6 +48,96 @@ class MovieController {
     })
   }
 
+  public list = async (req: Request, res: Response) => {
+
+    const { page, pageSize } = req.query;
+
+    const skip = page && page > 0 ? parseInt(page) : 1;
+    const limit = pageSize && parseInt(pageSize) <= 500 ? parseInt(pageSize) : 500;
+    const list = await Movie.find({})
+      .skip(skip - 1)
+      .limit(limit);
+
+    const totalResults = await Movie.countMovies({});
+
+
+    res.json({
+      list,
+      page: skip,
+      pageSize: limit,
+      totalResults,
+    })
+
+  }
+
+  public view = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    if (!id) {
+      throw new ErrorLib({
+        message: 'Id não informado'
+      })
+    }
+
+    const movie = await Movie.findById(id);
+
+    if (!movie) {
+      throw new ErrorLib({
+        message: 'Filme não encontrado'
+      })
+    }
+
+    res.json({
+      movie
+    })
+
+  }
+
+  public update = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    if (!id) {
+      throw new ErrorLib({
+        message: 'Id não informado'
+      })
+    }
+
+    const movie = await Movie.findById(id);
+
+    if (!movie) {
+      throw new ErrorLib({
+        message: 'Filme não encontrado'
+      })
+    }
+
+    const {
+      title,
+      genre,
+      releaseDate,
+      mainActors,
+      summarizedPlot,
+      youtubeTrailer,
+    } = req.body;
+
+   await movie.update({
+      title,
+      genre,
+      releaseDate,
+      mainActors,
+      summarizedPlot,
+      youtubeTrailer,
+    });
+
+   await movie.save();
+
+    res.json({
+      movie
+    })
+
+  }
+
 
 }
 

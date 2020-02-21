@@ -1,8 +1,14 @@
 <nav class="navbar navbar--dark fixed-top">
-  <h4 class="navbar-brand d-sm-block d-none">Catálogo De Filmes</h4>
-  <button class="btn btn--primary">
-    New
-  </button>
+  <a [routerLink]="['/movies']" class="navbar-brand d-sm-block d-none">Catálogo De Filmes</a>
+  <div>
+    <a class="btn btn--primary mr-4" [routerLink]="['/movies/new']">
+      New
+    </a>
+    <button class="ml-5 btn btn-outline-light" (click)="logout()">
+      Sair
+    </button>
+  </div>
+  
 </nav>
 
 <main class="main">

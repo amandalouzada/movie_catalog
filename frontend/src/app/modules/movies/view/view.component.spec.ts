@@ -1,28 +1,26 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewComponent } from './new.component';
-import { HttpClientModule } from '@angular/common/http';
+import { ViewComponent } from './view.component';
 import { MoviesService } from 'src/app/services/movies.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe('NewComponent', () => {
-  let component: NewComponent;
-  let fixture: ComponentFixture<NewComponent>;
+describe('ViewComponent', () => {
+  let component: ViewComponent;
+  let fixture: ComponentFixture<ViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      declarations: [NewComponent],
+      imports: [HttpClientModule, RouterTestingModule],
+      declarations: [ViewComponent],
       providers: [MoviesService]
+
     })
       .compileComponents();
-
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-    });
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewComponent);
+    fixture = TestBed.createComponent(ViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

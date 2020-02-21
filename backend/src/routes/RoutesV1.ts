@@ -18,4 +18,15 @@ RoutesV1.post('/movies',
   movieController.create
 )
 
+RoutesV1.get('/movies',
+  movieController.list
+)
+
+RoutesV1.get('/movies/:id',
+  movieController.view
+)
+
+RoutesV1.put('/movies/:id',
+  movieController.update
+)
 export default RoutesV1;
