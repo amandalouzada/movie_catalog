@@ -2,6 +2,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import movieController from './../controllers/MovieController';
 import userController from './../controllers/UserController';
+import authMiddleware from './../middlewares/auth';
 
 
 const RoutesV1 = express.Router();
@@ -21,6 +22,7 @@ RoutesV1.post('/login',
 )
 
 RoutesV1.post('/movies',
+  authMiddleware,
   movieController.create
 )
 
@@ -33,6 +35,7 @@ RoutesV1.get('/movies/:id',
 )
 
 RoutesV1.put('/movies/:id',
+  authMiddleware,
   movieController.update
 )
 export default RoutesV1;

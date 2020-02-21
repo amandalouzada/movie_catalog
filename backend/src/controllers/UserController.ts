@@ -3,7 +3,7 @@ import ErrorLib from "./../lib/ErrorLib";
 import { Request, Response } from 'express';
 import * as Yup from 'yup';
 import { hashSync, genSaltSync, compareSync, } from 'bcrypt';
-import { JwtHeader, sign } from 'jsonwebtoken';
+import { sign } from 'jsonwebtoken';
 import { User } from "../models/user";
 import { envTokenUser } from "../config/environment";
 
@@ -38,8 +38,8 @@ class UserController {
 
   }
 
-  public generateTokenLogin(user: { _id: string, username: string, password: string }): string {
-    const returnToken = sign({ id: user._id, }, `${envTokenUser}${user.password}`, {
+  public generateTokenLogin(user: { _id: string, username: string }): string {
+    const returnToken = sign({ id: user._id, }, envTokenUser, {
       expiresIn: '1h',
     });
     return returnToken;
@@ -75,10 +75,9 @@ class UserController {
     }
 
 
-   const token = this.generateTokenLogin({
+    const token = this.generateTokenLogin({
       _id: foundUser._id,
-      username: foundUser.username,
-      password: foundUser.password,
+      username: foundUser.username
     })
 
 
