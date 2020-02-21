@@ -33,5 +33,26 @@
 
 
 
+#Instruções
+
+  FrontEnd
+   ```
+   npm i -g @angular/cli
+   yarn install
+   ng serve
+   ```
+
+  BackEnd
+
+  ```
+  cp .env.example .env
+   yarn install
+   yarn run dev
+  ```
+
+  
+
+
+
 
  
