@@ -1,7 +1,7 @@
 export const envIsDev = () => process.env.NODE_ENV == 'development' ? true : false;
 export const envIsTest = () => process.env.NODE_ENV == 'test' ? true : false;
 export const envNotRate = () => process.env.NOT_RATE == 'true' ? true : false;
-
+export const envTokenUser =process.env.TOKEN_ENV_USER;
 export const envAppName = process.env.APP_NAME;
 
 export const envServer = {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt'
+const helper = new JwtHelperService()
 
 @Component({
   selector: 'app-movies',
@@ -7,13 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  public token: string;
+  public isExpired: boolean;
+  constructor(private router: Router) {
+    this.token = localStorage.getItem('token');
+    this.isExpired = helper.isTokenExpired(this.token)
+  }
 
   ngOnInit(): void {
   }
 
-  logout(){
+  logout() {
     localStorage.clear();
     this.router.navigate(['/auth']);
   }

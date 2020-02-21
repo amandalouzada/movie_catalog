@@ -1,7 +1,7 @@
 <nav class="navbar navbar--dark fixed-top">
   <a [routerLink]="['/movies']" class="navbar-brand d-sm-block d-none">Catálogo De Filmes</a>
   <div>
-    <a class="btn btn--primary mr-4" [routerLink]="['/movies/new']">
+    <a *ngIf="!isExpired" class="btn btn--primary mr-4" [routerLink]="['/movies/new']">
       New
     </a>
     <button class="ml-5 btn btn-outline-light" (click)="logout()">

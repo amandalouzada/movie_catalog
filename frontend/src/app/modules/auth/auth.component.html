@@ -1,0 +1,25 @@
+<main class="main--dark">
+  <section class="container">
+    <div class="page row justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="card page__card--dark">
+          <div class="card-body">
+            <div class="card-title d-flex justify-content-center page__card__title--upper">
+              Catálogo de Filmes
+            </div>
+            <ng-container [formGroup]="formLogin">
+              <div class="form-group">
+                <input type="text" class="form-control" name="username" formControlName="username"
+                  placeholder="username">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" name="password" formControlName="password">
+              </div>
+            </ng-container>
+            <button type="button" (click)="login()" class="btn btn-block page__btn--dark">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
