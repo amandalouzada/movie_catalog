@@ -40,6 +40,8 @@
    npm i -g @angular/cli
    yarn install
    ng serve
+   Usuário: anthor
+   Senha:12345678
    ```
 
   BackEnd
@@ -50,7 +52,7 @@
    yarn run dev
   ```
 
-  
+
 
 
 
