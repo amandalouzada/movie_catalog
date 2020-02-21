@@ -48,7 +48,6 @@ class MovieController {
     })
   }
 
-
   public list = async (req: Request, res: Response) => {
 
     const { page, pageSize } = req.query;
@@ -94,6 +93,51 @@ class MovieController {
     })
 
   }
+
+  public update = async (req: Request, res: Response) => {
+
+    const { id } = req.params;
+
+    if (!id) {
+      throw new ErrorLib({
+        message: 'Id não informado'
+      })
+    }
+
+    const movie = await Movie.findById(id);
+
+    if (!movie) {
+      throw new ErrorLib({
+        message: 'Filme não encontrado'
+      })
+    }
+
+    const {
+      title,
+      genre,
+      releaseDate,
+      mainActors,
+      summarizedPlot,
+      youtubeTrailer,
+    } = req.body;
+
+   await movie.update({
+      title,
+      genre,
+      releaseDate,
+      mainActors,
+      summarizedPlot,
+      youtubeTrailer,
+    });
+
+   await movie.save();
+
+    res.json({
+      movie
+    })
+
+  }
+
 
 }
 
