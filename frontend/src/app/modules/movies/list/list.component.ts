@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { MovieInterface } from 'src/app/interfaces/movie.interface';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt'
+
+const helper = new JwtHelperService()
 
 @Component({
   selector: 'app-list',
@@ -10,7 +13,13 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
   public movies: MovieInterface[] = [];
-  constructor(private moviesService: MoviesService, private router: Router) { }
+  public token: string;
+  public isExpired: boolean;
+
+  constructor(private moviesService: MoviesService, private router: Router) {
+    this.token = localStorage.getItem('token');
+    this.isExpired =helper.isTokenExpired(this.token)
+   }
 
   ngOnInit(): void {
     this.getMovies();
