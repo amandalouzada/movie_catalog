@@ -1,6 +1,7 @@
 import express from 'express';
 import { Request, Response } from 'express';
 import movieController from './../controllers/MovieController';
+import userController from './../controllers/UserController';
 
 
 const RoutesV1 = express.Router();
@@ -13,6 +14,11 @@ RoutesV1.get(
     })
   }
 );
+
+
+RoutesV1.post('/login',
+  userController.login
+)
 
 RoutesV1.post('/movies',
   movieController.create
