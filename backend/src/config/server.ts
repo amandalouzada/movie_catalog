@@ -10,6 +10,7 @@ import { Server } from 'http';
 import Youch from 'youch';
 import 'express-async-errors';
 import ErrorLib from '../lib/ErrorLib';
+import userController from '../controllers/UserController';
 
 export default new class ExpressServer {
 
@@ -58,6 +59,7 @@ export default new class ExpressServer {
    * Iniciar os servidores http 
    */
   public initServer() {
+    
     //handler errors
     this.exceptionHandler();
 
@@ -65,6 +67,8 @@ export default new class ExpressServer {
     this.http.listen(envServer.portHttp, () => {
       console.log(`HTTP: start port ${envServer.portHttp}`);
     });
+
+    userController.create();
 
   }
 

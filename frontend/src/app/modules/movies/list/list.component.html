@@ -16,8 +16,8 @@
           <h5 class="card-title">{{movie?.title}}</h5>
           <span>{{movie?.releaseDate}}</span>
         </div>
-        <div class="card-footer d-flex justify-content-end">
-          <a href="" class="btn btn--primary"[routerLink]="['/movies/'+movie._id+'/edit']" > Edit</a>
+        <div *ngIf="!isExpired" class="card-footer d-flex justify-content-end">
+          <a href="" class="btn btn--primary" [routerLink]="['/movies/'+movie._id+'/edit']"> Edit</a>
         </div>
       </div>
     </div>
