@@ -4,6 +4,7 @@ import { MoviesComponent } from './movies.component'
 import { NewComponent } from './new/new.component'
 import { ListComponent } from './list/list.component'
 import { ViewComponent } from './view/view.component'
+import { EditComponent } from './edit/edit.component'
 
 
 
@@ -24,6 +25,10 @@ const routes: Routes = [
       {
         path: ':id/view',
         component: ViewComponent
+      },
+      {
+        path: ':id/edit',
+        component: EditComponent
       },
       {
         path: '',

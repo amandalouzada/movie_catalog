@@ -28,4 +28,10 @@ export class MoviesService extends BaseService {
       headers: this.headers
     })
   }
+
+  updateMovie(movie: MovieInterface, id: string): Observable<any> {
+    return this.http.put(`${this.api}/movies/${id}`, movie, {
+      headers: this.headers
+    })
+  }
 }
