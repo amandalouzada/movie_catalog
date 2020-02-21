@@ -26,4 +26,7 @@ RoutesV1.get('/movies/:id',
   movieController.view
 )
 
+RoutesV1.put('/movies/:id',
+  movieController.update
+)
 export default RoutesV1;

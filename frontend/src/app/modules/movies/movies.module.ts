@@ -7,6 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component'
 import { YoutubeImgPipe } from 'src/app/pipes/youtube-img.pipe';
 import { ViewComponent } from './view/view.component';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ViewComponent } from './view/view.component';
     ListComponent,
     YoutubeImgPipe,
     ViewComponent,
+    EditComponent,
   ],
   imports: [
     CommonModule,
