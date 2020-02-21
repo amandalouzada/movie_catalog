@@ -3,8 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MoviesService } from 'src/app/services/movies.service';
 import { MovieInterface } from 'src/app/interfaces/movie.interface';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ThrowStmt } from '@angular/compiler';
-
+import * as toastr from 'toastr';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -36,10 +35,10 @@ export class EditComponent implements OnInit {
     this.moviesService.updateMovie(this.formMovie.value, this.movie._id)
       .subscribe((res: { movie: MovieInterface }) => {
         this.router.navigate([`/movies/${res.movie._id}/view`]);
-        console.log(res);
+        toastr.success("Filme atualizado");
       },
         (error) => {
-          console.log(error);
+          toastr.error(error.error.message);
         })
   }
 

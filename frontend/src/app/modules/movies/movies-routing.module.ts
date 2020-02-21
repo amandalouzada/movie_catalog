@@ -5,22 +5,25 @@ import { NewComponent } from './new/new.component'
 import { ListComponent } from './list/list.component'
 import { ViewComponent } from './view/view.component'
 import { EditComponent } from './edit/edit.component'
+import { AuthGuard } from 'src/app/guards/auth.guard'
 
 
 
 const routes: Routes = [
   {
-		path: '',
-		pathMatch: 'full',
-		redirectTo: 'list'
-	},
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'list'
+  },
   {
     path: '',
     component: MoviesComponent,
     children: [
       {
         path: 'new',
-        component: NewComponent
+        component: NewComponent,
+        canActivate: [AuthGuard],
+        canLoad: [AuthGuard]
       },
       {
         path: ':id/view',
@@ -28,7 +31,9 @@ const routes: Routes = [
       },
       {
         path: ':id/edit',
-        component: EditComponent
+        component: EditComponent,
+        canActivate: [AuthGuard],
+        canLoad: [AuthGuard]
       },
       {
         path: '',
