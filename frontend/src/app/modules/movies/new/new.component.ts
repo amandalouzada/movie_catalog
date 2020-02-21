@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { MoviesService } from 'src/app/services/movies.service';
 import { MovieInterface } from 'src/app/interfaces/movie.interface';
-import {ElementRef} from '@angular/core';
+import * as toastr from 'toastr';
+
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
@@ -29,10 +30,12 @@ export class NewComponent implements OnInit {
     console.log(this.formMovie.value);
     this.moviesService.newMovie(this.formMovie.value)
       .subscribe((res: { movie: MovieInterface }) => {
-        console.log(res);
+     toastr.success("Filme cadastrado");
+
       },
       (error)=>{
-        console.log(error);
+     toastr.error(error.error.message);
+
       })
   }
 
