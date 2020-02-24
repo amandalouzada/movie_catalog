@@ -18,16 +18,15 @@ export default async (req: Request, res: Response, next: NextFunction) => {
 
   const tokenDecoded: any = decode(token);
 
-  console.log(verify(token,envTokenUser));
 
-
-
-  // if (!foundUser || foundUser.token != token) {
-  //   throw new ErrorLib({
-  //     message: 'não autorizado',
-  //     httpCode: 401
-  //   })
-  // }
+  try {
+    verify(token, envTokenUser)
+  } catch (e) {
+    throw new ErrorLib({
+      message: 'não autorizado',
+      httpCode: 401
+    })
+  }
 
   next();
 };
